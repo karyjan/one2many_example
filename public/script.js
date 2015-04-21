@@ -54,6 +54,7 @@ function startViewer(){
                 });
 
                 updateOnlineCount();
+                document.getElementById("viewerButton").disabled = true;
             });
 
             room.addEventListener("stream-subscribed", function(streamEvent) {
