@@ -27,7 +27,7 @@ function startRecording () {
 
 
 function startViewer(){
-    var config = {audio: false, video: false, data: true, screen: false, videoSize: [320, 180, 320, 180]};
+    var config = {audio: false, video: false, data: true, screen: false, videoSize: [240, 180, 240, 180]};
     localStream = Erizo.Stream(config);
     createToken("viewer", "viewerWithData", function (response) {
         var token = response;
@@ -61,7 +61,7 @@ function startViewer(){
                 var stream = streamEvent.stream;
                 if(stream.hasVideo()) {
                     var div = document.createElement('div');
-                    div.setAttribute("style", "width: 320px; height: 240px;");
+                    div.setAttribute("style", "width: 240px; height: 180px;");
                     div.setAttribute("id", "test" + stream.getID());
 
                     document.body.appendChild(div);
@@ -122,7 +122,7 @@ function startMaster(){
 
     recording = false;
     var screen = getParameterByName("screen");
-    var config = {audio: true, video: true, data: true, screen: screen, videoSize: [320, 180, 320, 180]};
+    var config = {audio: true, video: true, data: true, screen: screen, videoSize: [240, 180, 240, 180]};
     // If we want screen sharing we have to put our Chrome extension id. The default one only works in our Lynckia test servers.
     // If we are not using chrome, the creation of the stream will fail regardless.
     if (screen){
